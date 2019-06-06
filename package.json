@@ -20,7 +20,7 @@
     "productName": "PromotionVideoProducer",
     "appId": "com.gloomyghost.promotionvideoproducer",
     "win": {
-        "icon": "./src/images/logo.png",
+        "icon": "./img/logo.png",
         "target": [
             "nsis"
         ]
