@@ -1,25 +1,37 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "src/main.js",
+  "name": "promotion-video-producer",
+  "version": "0.0.1",
+  "description": "A minimal Electron application written with Typescript",
   "scripts": {
-    "start": "electron ."
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer.git"
+  },
   "keywords": [
     "Electron",
     "quick",
     "start",
     "tutorial",
-    "demo"
+    "demo",
+    "typescript"
   ],
   "author": "GitHub",
-  "license": "CC0-1.0",
+  "license": "GPL-3.0",
   "devDependencies": {
-    "electron": "^5.0.2"
+    "electron": "^5.0.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
   },
   "dependencies": {
     "azusa": "^1.0.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer/issues"
+  },
+  "homepage": "https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer"
 }
