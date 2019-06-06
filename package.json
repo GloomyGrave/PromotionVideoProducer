@@ -1,31 +1,29 @@
 {
   "name": "promotion-video-producer",
   "version": "0.0.1",
-  "description": "A minimal Electron application written with Typescript",
+  "description": "Promotion Video Producer(a.k.a PVMaker) Is a software that generates music MV for Vocaloid like art work",
+  "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build && electron ./dist/main.js"
+    "start": "npm run build && electron ./dist/main.js",
+    "dist": "npm run build && electron-builder"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer.git"
   },
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo",
-    "typescript"
+    "Electron"
   ],
   "author": "GitHub",
   "license": "GPL-3.0",
   "devDependencies": {
     "electron": "^5.0.2",
     "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "electron-builder": "^20.43.0"
   },
   "dependencies": {
     "azusa": "^1.0.2"
