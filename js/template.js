@@ -1,47 +1,47 @@
 // 6号可视化效果
 define(['analyser', 'util'], function (analyser, util) {
 
-var cover = '',
-    canvas = util.getById('visual-canvas'),
-    ctx = canvas.getContext('2d'),
-    data,
-    initOrNot = false;
+    var cover = '',
+        canvas = util.getById('visual-canvas'),
+        ctx = canvas.getContext('2d'),
+        data,
+        initOrNot = false;
 
-function draw() {
-    ctx.save();
-    data = analyser.getData();
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+    function draw() {
+        ctx.save();
+        data = analyser.getData();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-    ctx.restore();
-}
 
-function init() {
-    util.setBg(6);
-    
-    initOrNot = true;
-}
+        ctx.restore();
+    }
 
-function isInit() {
-    return initOrNot;
-}
+    function init() {
+        util.setBg(6);
 
-function enable() {
-    util.showCanvas();
-}
+        initOrNot = true;
+    }
 
-function disable() {
-    util.hideCanvas();
-}
+    function isInit() {
+        return initOrNot;
+    }
 
-return {
-    draw: draw,
-    init: init,
-    isInit: isInit,
-    cover: cover,
-    enable: enable,
-    disable: disable
-}
+    function enable() {
+        util.showCanvas();
+    }
+
+    function disable() {
+        util.hideCanvas();
+    }
+
+    return {
+        draw: draw,
+        init: init,
+        isInit: isInit,
+        cover: cover,
+        enable: enable,
+        disable: disable
+    }
 
 });

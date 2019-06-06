@@ -1,58 +1,58 @@
 // 2号可视化效果
 define(['analyser', 'util'], function (analyser, util) {
 
-var cover = 'e2.jpg';
+    var cover = 'e2.jpg';
 
-var canvas = util.getById('visual-canvas'),
-    ctx = canvas.getContext('2d'),
-    data,
-    lastValue = [], // 上次值 
-    seperate = [], // 间隙
-    seperateTimer = 0, // 间隙转换计时
-    shadowBlur = 0, // 线模糊值
-    avarage = 0, // 平均值
-    color = null,
-    choice,
-    initOrNot = false;
+    var canvas = util.getById('visual-canvas'),
+        ctx = canvas.getContext('2d'),
+        data,
+        lastValue = [], // 上次值 
+        seperate = [], // 间隙
+        seperateTimer = 0, // 间隙转换计时
+        shadowBlur = 0, // 线模糊值
+        avarage = 0, // 平均值
+        color = null,
+        choice,
+        initOrNot = false;
 
-/** 改变颜色 */
-function changeColor() {
-    choice = util.intRandom(0, 9);
-    if (choice < 3) {
-        color.r = color.r + color.rS * color.rD;
-        if (color.r > 225) {
-            color.rD = -1;
-        } else if (color.r < 100) {
-            color.rD = 1;
-        }
-    } else if (choice < 6) {
-        color.g = color.g + color.gS * color.gD;
-        if (color.g > 225) {
-            color.gD = -1;
-        } else if (color.g < 100) {
-            color.gD = 1;
-        }
-    } else {
-        color.b = color.b + color.bS * color.bD;
-        if (color.b > 225) {
-            color.bD = -1;
-        } else if (color.b < 100) {
-            color.bD = 1;
+    /** 改变颜色 */
+    function changeColor() {
+        choice = util.intRandom(0, 9);
+        if (choice < 3) {
+            color.r = color.r + color.rS * color.rD;
+            if (color.r > 225) {
+                color.rD = -1;
+            } else if (color.r < 100) {
+                color.rD = 1;
+            }
+        } else if (choice < 6) {
+            color.g = color.g + color.gS * color.gD;
+            if (color.g > 225) {
+                color.gD = -1;
+            } else if (color.g < 100) {
+                color.gD = 1;
+            }
+        } else {
+            color.b = color.b + color.bS * color.bD;
+            if (color.b > 225) {
+                color.bD = -1;
+            } else if (color.b < 100) {
+                color.bD = 1;
+            }
         }
     }
-}
-    
-// 绘制
-function draw() {
-    var width = canvas.width / 128,
-        x = 0,
-        y = 0,
-        direction = 1,
-        middle = canvas.height / 2,
-        seperateLength = 0,
-        seperateNum = 0,
-        total = 0,
-        lastAvarage = avarage;
+
+    // 绘制
+    function draw() {
+        var width = canvas.width / 128,
+            x = 0,
+            y = 0,
+            direction = 1,
+            middle = canvas.height / 2,
+            seperateLength = 0,
+            seperateNum = 0,
+            total = 0,
+            lastAvarage = avarage;
         data = analyser.getData();
         ctx.save();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -121,46 +121,46 @@ function draw() {
         ctx.lineTo(canvas.width, middle);
         ctx.stroke();
         ctx.restore();
-}
-
-function init() {
-    util.setBg(2);
-    for (var i = 0; i < 256; i++) {
-        lastValue[i] = 0;
     }
-    color = {
-        r: 100,
-        g: 100,
-        b: 100,
-        rS: util.intRandom(1, 3),
-        gS: util.intRandom(1, 3),
-        bS: util.intRandom(1, 3),
-        rD: 1,
-        gD: 1,
-        bD: 1,
+
+    function init() {
+        util.setBg(2);
+        for (var i = 0; i < 256; i++) {
+            lastValue[i] = 0;
+        }
+        color = {
+            r: 100,
+            g: 100,
+            b: 100,
+            rS: util.intRandom(1, 3),
+            gS: util.intRandom(1, 3),
+            bS: util.intRandom(1, 3),
+            rD: 1,
+            gD: 1,
+            bD: 1,
+        }
+        initOrNot = true;
     }
-    initOrNot = true;
-}
 
-function isInit() {
-    return initOrNot;
-}
+    function isInit() {
+        return initOrNot;
+    }
 
-function enable() {
-    util.showCanvas();
-}
+    function enable() {
+        util.showCanvas();
+    }
 
-function disable() {
-    util.hideCanvas();
-}
+    function disable() {
+        util.hideCanvas();
+    }
 
-return {
-    draw: draw,
-    init: init,
-    isInit: isInit,
-    cover: cover,
-    enable: enable,
-    disable: disable
-}
+    return {
+        draw: draw,
+        init: init,
+        isInit: isInit,
+        cover: cover,
+        enable: enable,
+        disable: disable
+    }
 
 });
