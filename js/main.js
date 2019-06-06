@@ -1,5 +1,5 @@
 // 主程序
-require(['util', 'effect'], function (util, effect) {
+require(['util', 'effect'], function(util, effect) {
 
     var $body = $('body'),
         $fileList = $('#file-list'),
@@ -179,37 +179,12 @@ require(['util', 'effect'], function (util, effect) {
             currentFile = num;
 
             loadFile(fileList[currentFile]);
-            $fileList.find('li').each(function () {
+            $fileList.find('li').each(function() {
                 if (+$(this).attr('num') == num) {
                     $(this).addClass('playing');
                     var songName = $(this).text();
                     $('title').text(songName);
                     $songName.text(songName);
-                    // CSS3动画效果
-                    if (songNameTimer !== null) {
-                        clearTimeout(songNameTimer);
-                        $songName.removeClass('showAndHide');
-                        $songName[0].offsetWidth = $songName[0].offsetWidth;
-                    }
-                    $songName.addClass('showAndHide');
-                    songNameTimer = setTimeout(function () {
-                        songNameTimer = null;
-                        $songName.removeClass('showAndHide');
-                    }, 15000);
-                    // 3秒后显示歌曲名
-                    /*setTimeout(function () {
-                        $songName.animate({
-                            'opacity': '1',
-                            'top': '0'
-                        }, 600);
-                        // 显示6秒后再次隐藏歌曲名
-                        setTimeout(function () {
-                            $songName.animate({
-                                'opacity': '0',
-                                'top': '-50'
-                            }, 600);
-                        }, 6000);
-                    }, 3000);*/
                 } else {
                     $(this).removeClass('playing');
                 }
@@ -223,41 +198,45 @@ require(['util', 'effect'], function (util, effect) {
         audio.pause();
     }
 
-    $body.on('click', '#help-btn', function () {
+    $body.on('click', '#help-btn', function() {
         // 帮助渐隐渐入
         $('#help').fadeIn('fast');
         var $img = $('#help img').first(),
             src = $img.attr('data-src');
         $img.attr('src', src);
-    }).on('click', '#help', function () {
+    }).on('click', '#help', function() {
         $(this).fadeOut('fast');
-    }).on('click', '#title', function () {
+    }).on('click', '#title', function() {
         // 打开文件
         $inputFile.click();
-    }).on('click', '#play-mode', function () {
+        title.style.display="none";
+    }).on('click', '#play-mode', function() {
         // 改变播放模式
         changePlayMode();
-    }).on('click', '#fullscreen', function () {
+    }).on('click', '#fullscreen', function() {
         // 全屏切换
         util.fullscreenSwitch();
+    }).on('click', '#add-file', function() {
+        // 打开文件
+        $inputFile.click();
     });
 
     // 文件拖曳
-    doc.addEventListener('drop', function (e) {
+    doc.addEventListener('drop', function(e) {
         onDocumentDrop(e);
     }, false);
     doc.addEventListener("dragenter", dragAndDropCommon, false);
     doc.addEventListener("dragexit", dragAndDropCommon, false);
     doc.addEventListener("dragover", dragAndDropCommon, false);
 
-    audio.addEventListener('ended', function () {
+    audio.addEventListener('ended', function() {
         onMusicEnded();
     }, false);
 
-    $body.on('click', '#file-list li', function () {
+    $body.on('click', '#file-list li', function() {
         var songNum = $(this).attr('num');
         playSpecify(+songNum);
-    }).on('contextmenu', function (e) {
+    }).on('contextmenu', function(e) {
         e.preventDefault();
         if ($fileListWrapper.css('left') != '0px') {
             $fileListWrapper.css({ 'left': '0' });
@@ -268,7 +247,7 @@ require(['util', 'effect'], function (util, effect) {
         }
     });
 
-    doc.addEventListener('keydown', function (e) {
+    doc.addEventListener('keydown', function(e) {
         switch (e.keyCode) {
             case 32: // 空格
                 playToggle();
@@ -288,11 +267,11 @@ require(['util', 'effect'], function (util, effect) {
         }
     }, false);
 
-    $(window).on('beforeunload', function () {
+    $(window).on('beforeunload', function() {
         saveSetting();
     });
 
-    $inputFile.on('change', function (e) {
+    $inputFile.on('change', function(e) {
         appendFiles(inputFile.files);
     });
 

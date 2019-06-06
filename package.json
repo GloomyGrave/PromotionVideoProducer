@@ -1,5 +1,5 @@
 {
-  "name": "promotionvideoproducer",
+  "name": "promotion-video-producer",
   "version": "0.0.1",
   "description": "Promotion Video Producer(a.k.a PVMaker & PV制作器) Is a software that generates music MV for Vocaloid like art work",
   "main": "main.js",
