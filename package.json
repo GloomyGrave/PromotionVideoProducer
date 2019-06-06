@@ -3,19 +3,37 @@
   "version": "0.0.1",
   "description": "Promotion Video Producer(a.k.a PVMaker & PV制作器) Is a software that generates music MV for Vocaloid like art work",
   "main": "main.js",
-  "directories": {
-    "lib": "lib"
-  },
   "dependencies": {
-    "electron": "^5.0.2",
     "grunt": "^1.0.4",
     "grunt-contrib-connect": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.2",
+    "electron-builder": "^20.43.0"
+  },
   "scripts": {
     "test": "electron .",
-    "start": "electron ."
+    "start": "electron .",
+    "dist:w64": "electron-builder --win --x64 --publish never"
   },
+  "build": {
+    "productName": "PromotionVideoProducer",
+    "appId": "com.gloomyghost.promotionvideoproducer",
+    "win": {
+        "icon": "./src/images/logo.png",
+        "target": [
+            "nsis"
+        ]
+    },
+    "nsis": {
+        "oneClick": false,
+        "perMachine": true,
+        "allowElevation": true,
+        "allowToChangeInstallationDirectory": true,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true
+    }
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer.git"
