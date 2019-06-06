@@ -13,7 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "electron ."
+    "test": "electron .",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
