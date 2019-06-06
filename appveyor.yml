@@ -1,0 +1,32 @@
+image: Visual Studio 2017
+
+platform:
+  - x64
+
+cache:
+  - node_modules
+  - '%USERPROFILE%\.electron'
+
+init:
+  - git config --global core.autocrlf input
+
+install:
+  - ps: Install-Product node 8 x64
+  - yarn
+
+build_script:
+  - yarn dist:w64
+
+test: off
+
+version: build.0.0.{build}
+
+artifacts:
+- path: dist\*exe
+  name: PromotionVideoProducer-{build}
+
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: s4Qh6C0lm0rZIKztCRjl69ER4IzK4voYH4O8XgMNu88/8pSW3Vb9h6kwq35UDq3V
