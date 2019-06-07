@@ -26,9 +26,11 @@
 - [x] Setup Package
 - [ ] Background image
 - [ ] Auto Render
-
 - [ ] Export Video
 
+## Reference
+- [VisualMusic](https://github.com/surunzi/VisualMusic)
+- [Electron](https://electronjs.org/)
 
 
 ## LICENSE
@@ -36,3 +38,4 @@
 GloomyGhost-MosquitoSeal/PromotionVideoProducer is licensed under the GNU General Public License v3.0
 
 [See more information here](<https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer/blob/master/LICENSE>)
+
