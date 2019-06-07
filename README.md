@@ -24,6 +24,7 @@
 - [x] Play List
 - [x] Web Audio API
 - [x] Setup Package
+- [x] Close Window
 - [ ] Background image
 - [ ] Auto Render
 - [ ] Export Video
