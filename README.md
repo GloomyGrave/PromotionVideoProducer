@@ -6,6 +6,8 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/arf6cgdb4v4o6to3?svg=true)](https://ci.appveyor.com/project/GloomyGhost-MosquitoCoil/promotionvideoproducer)
 
+![Download](https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer/releases)
+
 ## Shotscreen
 
 ![1`2B@2$KD$A 2NXM)SIBQ_1](https://user-images.githubusercontent.com/12003087/59049517-c1e7cf80-88ba-11e9-8094-4cd7afaafbc6.png)
