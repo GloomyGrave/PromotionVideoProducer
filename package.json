@@ -20,20 +20,20 @@
     "productName": "PromotionVideoProducer",
     "appId": "com.gloomyghost.promotionvideoproducer",
     "win": {
-        "icon": "./img/logo.png",
-        "target": [
-            "nsis"
-        ]
+      "icon": "./img/logo.png",
+      "target": [
+        "nsis"
+      ]
     },
     "nsis": {
-        "oneClick": false,
-        "perMachine": true,
-        "allowElevation": true,
-        "allowToChangeInstallationDirectory": true,
-        "createDesktopShortcut": true,
-        "createStartMenuShortcut": true
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     }
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GloomyGhost-MosquitoSeal/PromotionVideoProducer.git"
