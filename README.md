@@ -25,6 +25,7 @@
 - [x] Web Audio API
 - [x] Setup Package
 - [x] Close Window
+- [x] Function Key
 - [ ] Background image
 - [ ] Auto Render
 - [ ] Export Video

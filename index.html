@@ -18,9 +18,9 @@
 
     <audio id="music" class="hidden" controls></audio>
 
-    <input id="input-file" type="file" class="hidden" accept="audio/mp3" multiple>
+    <input id="input-file" type="file" class="hidden" accept="audio" multiple>
 
-    <h1 id="title">Please drag your music files here</h1>
+    <h1 id="title">Please drag or open your music files here</h1>
 
     <div id="file-list-wrapper">
         <div class="header">Play List</div>
@@ -41,20 +41,43 @@
     <div id="help-wrapper">
         <div id="help-btn">Help</div>
     </div>
-
-    <div id="play-mode"></div>
-    <div id="fullscreen"></div>
+    <div id="buttonForWindow">
+        <div id="play-mode"></div>
+        <div id="fullscreen"></div>
+    </div>
     <div id="song-name"></div>
 
     <script src="lib/jquery.min.js"></script>
     <script src="lib/require.min.js" data-main="js/main"></script>
 
     <script>
+
+        document.onkeydown = function (event) {
+            let e = event || window.event || arguments.callee.caller.arguments[0];
+            if (e && e.keyCode == 112) { // 按 F1
+                let eventon = document.getElementById("buttonForWindow");
+                eventon.style.display = "none"
+            }
+            if (e && e.keyCode == 113) { // 按 F2
+                let eventon = document.getElementById("buttonForWindow");
+                eventon.style.display = "block"
+            }
+            if (e && e.keyCode == 114) { // 按F3
+                let eventon = document.getElementById("song-name");
+                eventon.style.display = "none"
+            }
+            if (e && e.keyCode == 115) { // 按F4
+                let eventon = document.getElementById("song-name");
+                eventon.style.display = "block"
+            }
+        };
+
         function closeWindow() {
             window.opener = null;
             window.close();
         }
     </script>
+
 
 </body>
 
