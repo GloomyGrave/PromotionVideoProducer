@@ -97,7 +97,7 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: default;
 }
 
-#close{
+#close-btn{
     padding: 15px;
     font-size: 20px;
     color: #888;

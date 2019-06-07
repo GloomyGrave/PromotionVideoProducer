@@ -1,6 +1,4 @@
 const { app, BrowserWindow } = require('electron')
-const electron = require('electron')
-const ipc = electron.ipcMain
 
 let mainWindow
 
@@ -19,7 +17,7 @@ function createWindow() {
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -31,12 +29,6 @@ function createWindow() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
-
-
-ipc.on('window-close', function () {
-  mainWindow.close();
-})
-
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

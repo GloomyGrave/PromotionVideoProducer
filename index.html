@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body style="-webkit-app-region: drag">
     <div id="main-bg"></div>
 
     <div id="background"></div>
@@ -26,7 +26,7 @@
         <div class="header">Play List</div>
         <ul id="file-list"></ul>
         <ul id="add-file">Add File</ul>
-        <ul id="close">Close APP</ul>
+        <ul id="close-btn" onclick="close();">Close APP</ul>
     </div>
 
     <div id="effect-list-wrapper">
@@ -50,10 +50,10 @@
     <script src="lib/require.min.js" data-main="js/main"></script>
 
     <script>
-        require('./renderer.js')
+        function close(){
+            window.close();
+        }
     </script>
-
-
 
 </body>
 
