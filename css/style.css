@@ -8,12 +8,15 @@
     margin: 0;
     padding: 0;
     font-family: 微软雅黑;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 html {
     overflow: hidden;
 }
-
 
 /* 隐藏滚动条 */
 
@@ -46,8 +49,7 @@ input[type="range"]::-webkit-slider-thumb {
     top: 0;
 }
 
-#file-list-wrapper,
-#effect-list-wrapper {
+#file-list-wrapper, #effect-list-wrapper {
     position: fixed;
     width: 200px;
     top: 0;
@@ -72,45 +74,43 @@ input[type="range"]::-webkit-slider-thumb {
     border-color: #202020;
 }
 
-#file-list-wrapper .header,
-#effect-list-wrapper .header {
+#file-list-wrapper .header, #effect-list-wrapper .header {
     padding: 15px;
     font-size: 20px;
-    color: #888;
+    color: rgb(255, 255, 255);
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid #202020;
-    box-shadow: 0 0 5px #000, inset 0 0 5px rgba(255, 255, 255, 0.2);
     text-align: center;
-    background-color: #404040;
+    background-color: #1de9b6;
     cursor: default;
 }
 
-#add-file{
+#add-file {
     padding: 15px;
     font-size: 20px;
-    color: #888;
+    color: rgb(255, 255, 255);
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid #202020;
-    box-shadow: 0 0 5px #000, inset 0 0 5px rgba(255, 255, 255, 0.2);
     text-align: center;
-    background-color: #404040;
-    cursor: default;
+    background-color: #00b686;
+    cursor: pointer;
 }
 
-#close-btn{
+#close-btn {
     padding: 15px;
     font-size: 20px;
-    color: #888;
+    color: #fff;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid #202020;
-    box-shadow: 0 0 5px #000, inset 0 0 5px rgba(255, 255, 255, 0.2);
     text-align: center;
-    background-color: #404040;
-    cursor: default;
+    background-color: #ff8585;
+    position: absolute;
+    bottom: 0;
+    width: 170px;
+    cursor: pointer;
 }
 
-#file-list,
-#effect-list {
+#file-list, #effect-list {
     width: 200px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -158,12 +158,10 @@ input[type="range"]::-webkit-slider-thumb {
 
 #file-list .playing {
     color: #fff;
-    background-color: #30ABD5 !important;
-    box-shadow: inset 0 0 3px rgba(0, 0, 0, 1) !important;
+    background-color: #00beff;
 }
 
-#fullscreen,
-#play-mode {
+#fullscreen, #play-mode {
     position: fixed;
     width: 50px;
     height: 50px;
@@ -174,8 +172,7 @@ input[type="range"]::-webkit-slider-thumb {
     z-index: 2;
 }
 
-#fullscreen:hover,
-#play-mode:hover {
+#fullscreen:hover, #play-mode:hover {
     opacity: 1;
 }
 
@@ -228,8 +225,6 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100%;
     height: 100%;
     background-color: #373939;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0));
 }
 
 #music {
@@ -257,7 +252,7 @@ input[type="range"]::-webkit-slider-thumb {
     background-position: 0 -50px;
 }
 
-#play-mode .single {
+#play-mode.single {
     background-position: 0 -100px;
 }
 
@@ -290,9 +285,7 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
-#visual-canvas,
-#threed-webgl-renderer,
-#threed-canvas-renderer {
+#visual-canvas, #threed-webgl-renderer, #threed-canvas-renderer {
     position: fixed;
     width: 100%;
     height: 100%;
