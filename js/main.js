@@ -219,12 +219,6 @@ require(['util', 'effect'], function(util, effect) {
     }).on('click', '#add-file', function() {
         // 打开文件
         $inputFile.click();
-    }).on('click', '#colse', function() {
-        window.opener = null;
-        // JS重写当前页面
-        window.open("", "_self", "");
-        // 顺理成章的关闭当前被重写的窗口
-        window.close();
     });
 
     // 文件拖曳

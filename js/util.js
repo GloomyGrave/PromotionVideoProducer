@@ -55,7 +55,7 @@ define(function () {
 
     function hideCanvas() {
         $canvas.addClass('hidden');
-    }
+    }    
 
     return {
         getById: getById,

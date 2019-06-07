@@ -1,10 +1,12 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
+const electron = require('electron')
+const ipc = electron.ipcMain
 
 let mainWindow
 
 app.disableHardwareAcceleration()
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1280,
@@ -29,6 +31,12 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
+
+
+ipc.on('window-close', function () {
+  mainWindow.close();
+})
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

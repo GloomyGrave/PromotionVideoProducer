@@ -97,6 +97,18 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: default;
 }
 
+#close{
+    padding: 15px;
+    font-size: 20px;
+    color: #888;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid #202020;
+    box-shadow: 0 0 5px #000, inset 0 0 5px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    background-color: #404040;
+    cursor: default;
+}
+
 #file-list,
 #effect-list {
     width: 200px;
